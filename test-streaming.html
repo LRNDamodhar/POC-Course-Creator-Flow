@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Streaming Endpoint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        #output {
+            border: 1px solid #ccc;
+            padding: 20px;
+            min-height: 300px;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .streaming {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Backend Streaming</h1>
+    <p>This page tests the streaming endpoint at <code>http://localhost:3000/api/turn/stream</code></p>
+    
+    <button onclick="testStreaming()">Start Streaming Test</button>
+    <button onclick="clearOutput()">Clear Output</button>
+    
+    <div id="status"></div>
+    <h3>Output:</h3>
+    <div id="output"></div>
+
+    <script>
+        function setStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+        }
+
+        function appendOutput(text) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.textContent += text;
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        function clearOutput() {
+            document.getElementById('output').textContent = '';
+            document.getElementById('status').textContent = '';
+            document.getElementById('status').className = 'status';
+        }
+
+        async function testStreaming() {
+            clearOutput();
+            setStatus('Connecting to streaming endpoint...', 'streaming');
+            
+            const testInput = "Create a short introduction for a Python course";
+            
+            try {
+                console.log('[Test] Starting fetch request...');
+                
+                const response = await fetch('http://localhost:3000/api/turn/stream', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ input: testInput })
+                });
+
+                console.log('[Test] Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                setStatus('Connected! Receiving stream...', 'connected');
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let chunkCount = 0;
+                let contentReceived = '';
+
+                const readChunk = async () => {
+                    const { done, value } = await reader.read();
+                    
+                    if (done) {
+                        console.log('[Test] Stream completed');
+                        setStatus(`Stream completed! Received ${chunkCount} chunks`, 'connected');
+                        appendOutput('\n\n--- STREAM COMPLETE ---');
+                        return;
+                    }
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    console.log('[Test] Raw chunk:', chunk);
+                    
+                    const lines = chunk.split('\n');
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            try {
+                                const jsonStr = line.substring(6);
+                                console.log('[Test] Parsing JSON:', jsonStr);
+                                const data = JSON.parse(jsonStr);
+                                
+                                console.log('[Test] Parsed data:', data);
+                                
+                                if (data.type === 'content' && data.data) {
+                                    chunkCount++;
+                                    contentReceived += data.data;
+                                    console.log('[Test] Content chunk #' + chunkCount + ':', data.data);
+                                    appendOutput(data.data);
+                                    setStatus(`Streaming... (${chunkCount} chunks received)`, 'streaming');
+                                } else if (data.type === 'error') {
+                                    console.error('[Test] Stream error:', data.message);
+                                    setStatus('Error: ' + data.message, 'error');
+                                    appendOutput('\n\nERROR: ' + data.message);
+                                    return;
+                                } else if (data.type === 'done') {
+                                    console.log('[Test] Stream done signal received');
+                                    setStatus(`Stream completed! Received ${chunkCount} chunks`, 'connected');
+                                    appendOutput('\n\n--- STREAM COMPLETE ---');
+                                    return;
+                                } else if (data.type === 'connected') {
+                                    console.log('[Test] Connected to stream');
+                                    appendOutput('=== STREAM STARTED ===\n\n');
+                                }
+                            } catch (e) {
+                                console.warn('[Test] Failed to parse SSE data:', line, e);
+                            }
+                        }
+                    }
+
+                    readChunk();
+                };
+
+                readChunk();
+
+            } catch (error) {
+                console.error('[Test] Fetch error:', error);
+                setStatus('Error: ' + error.message, 'error');
+                appendOutput('\n\nERROR: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

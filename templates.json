@@ -1,0 +1,592 @@
+{
+  "consent": {
+    "contentDescription": "{{CONSENT_DESCRIPTION}}",
+    "checklists": "{{CONSENT_CHECKLISTS}}",
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "consentChecklist": {
+    "type": "false",
+    "item": "{{CONSENT_ITEM}}"
+  },
+  "binaryList": {
+    "description": "{{BINARY_LIST_DESCRIPTION}}",
+    "choices": "{{BINARY_LIST_CHOICES}}",
+    "questions": "{{BINARY_LIST_QUESTIONS}}",
+    "feedback": {
+      "correctTitle": "{{CORRECT_FEEDBACK_TITLE}}",
+      "correctSummary": "{{CORRECT_FEEDBACK_SUMMARY}}",
+      "partialTitle": "{{PARTIAL_FEEDBACK_TITLE}}",
+      "partialSummary": "{{PARTIAL_FEEDBACK_SUMMARY}}",
+      "incorrectTitle": "{{INCORRECT_FEEDBACK_TITLE}}",
+      "incorrectSummary": "{{INCORRECT_FEEDBACK_SUMMARY}}"
+    },
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "binaryListChoice": {
+    "index": "{{INDEX}}",
+    "name": "{{BINARY_LIST_ITEM_NAME}}",
+    "content": "{{BINARY_LIST_ITEM_CONTENT}}"
+  },
+  "binaryListQuestion": {
+    "index": "{{INDEX}}",
+    "category": "{{BINARY_LIST_CORRECT_CHOICE}}",
+    "questionText": "{{BINARY_LIST_QUESTION_TEXT}}",
+    "answer": "{{BINARY_LIST_CORRECT_CHOICE_INDEX}}",
+    "icon": {
+      "path": "{{BINARY_LIST_ICON_PATH}}",
+      "description": "{{BINARY_LIST_ICON_DESCRIPTION}}",
+      "altText": "{{BINARY_LIST_ICON_ALT_TEXT}}"
+    },
+    "feedback": {
+      "correctTitle": "",
+      "correctContent": "",
+      "incorrectTitle": "",
+      "incorrectContent": ""
+    }
+  },
+  "binaryList_common_feedback": {
+    "correctTitle": "",
+    "correctContent": "",
+    "partialTitle": "",
+    "partialContent": "",
+    "incorrectTitle": "",
+    "incorrectContent": ""
+  },
+  "binaryLinst_question_feedback": {
+    "correctTitle": "",
+    "correctContent": "",
+    "incorrectTitle": "",
+    "incorrectContent": ""
+  },
+  "binaryList_question_image": {
+    "path": "",
+    "description": "",
+    "altText": ""
+  },
+  "saq": {
+    "layout": "textSAQ",
+    "layoutView": "dir-ltr",
+    "question": "{{SAQ_QUESTION}}",
+    "description": "{{SAQ_DESCRIPTION}}",
+    "questionDescription": "{{SAQ_QUESTION_DESCRIPTION}}",
+    "choiceType": "{{SAQ_CHOICE_TYPE}}",
+    "options": "{{SAQ_OPTIONS}}",
+    "retrySettings": "{{SAQ_RETRY_SETTINGS}}",
+    "feedback": {
+      "type": "{{SAQ_FEEDBACK_TYPE}}",
+      "singleFeedbackSummary": "{{SAQ_FEEDBACK_SUMMARY}}",
+      "correctTitle": "{{CORRECT_FEEDBACK_TITLE}}",
+      "correctContent": "{{CORRECT_FEEDBACK_CONTENT}}",
+      "incorrectTitle": "{{INCORRECT_FEEDBACK_TITLE}}",
+      "incorrectContent": "{{INCORRECT_FEEDBACK_CONTENT}}",
+      "retryTitle": "{{RETRY_FEEDBACK_TITLE}}",
+      "retryContent": "{{RETRY_FEEDBACK_CONTENT}}"
+    },
+    "image": {
+      "path": "",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "saqOptions": {
+    "type": "{{SAQ_CHOICE_TYPE}}",
+    "choice": "{{SAQ_CHOICE}}",
+    "image": {
+      "path": "undefined",
+      "description": "",
+      "altText": ""
+    },
+    "nasbaFeedbackTitle": "{{NASBA_FEEDBACK_TITLE}}",
+    "nasbaFeedbackSummary": "{{NASBA_FEEDBACK_SUMMARY}}"
+  },
+  "textGraphic": {
+    "layout": "text-only",
+    "content": "",
+    "content2": "",
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "video": {
+    "description": "{{VIDEO_DESCRIPTION}}",
+    "autoPlay": "on",
+    "path": "{{VIDEO_PATH}}",
+    "panels": "{{VIDEO_PANELS}}",
+    "showCC": false,
+    "showAltText": true,
+    "pageNav": false,
+    "image": {
+      "path": "{{VIDEO_IMAGE_DESKTOP}}",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "{{VIDEO_IMAGE_MOBILE}}",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "videoPanels": {
+    "type": "false",
+    "description": "{{VIDEO_PANEL_DESCRIPTION}}",
+    "image": {
+      "path": "{{VIDEO_PANEL_DESK_IMAGE}}",
+      "description": "{{VIDEO_PANEL_DESCRIPTION}}",
+      "altText": "{{VIDEO_PANEL_ALT_TEXT}}"
+    },
+    "mobileImage": {
+      "path": "{{VIDEO_PANEL_MOB_IMAGE}}"
+    }
+  },
+  "selectAndReveal": {
+    "layout": "dir-ltr",
+    "description": "{{REVEAL_DESCRIPTION}}",
+    "type": "random",
+    "items": "{{REVEAL_ITEMS}}"
+  },
+  "selectAndRevealItems": {
+    "type": "false",
+    "content": "{{REVEAL_ITEM_CONTENT}}",
+    "title": "{{REVEAL_ITEM_TITLE}}",
+    "image": {
+      "path": "{{REVEAL_ITEM_IMG_PATH}}",
+      "mobPath": "{{REVEAL_ITEM_MOB_PATH}}",
+      "description": "{{REVEAL_ITEM_IMG_DESCRIPTION}}",
+      "altText": "{{REVEAL_ITEM_IMG_ALT}}"
+    }
+  },
+  "selectAndRevealHotSpots": {
+    "templateType": "hotspots",
+    "layout": "dir-ltr",
+    "description": "{{HOTSPOT_DESCRIPTION}}",
+    "selection": "{{HOTSPOT_SELECTION}}",
+    "unlockCount": "{{HOTSPOT_UNLOCK_COUNT}}",
+    "unlockToggle": "{{HOTSPOT_UNLOCK_TOGGLE}}",
+    "customization": {
+      "hoverIcon": "{{HOTSPOT_HOVER_ICON}}",
+      "normalIcon": "{{HOTSPOT_NORMAL_ICON}}",
+      "completeIcon": "{{HOTSPOT_COMPLETE_ICON}}"
+    },
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "items": "{{HOTSPOT_ITEMS}}"
+  },
+  "selectAndRevealHotSpotItems": {
+    "title": "{{HOTSPOT_ITEM_TITLE}}",
+    "description": "{{HOTSPOT_ITEM_DESCRIPTION}}",
+    "position": {
+      "x": "{{HOTSPOT_POSITION_XAXIS}}",
+      "y": "{{HOTSPOT_POSITION_YAXIS}}",
+      "smartphoneX": "{{HOTSPOT_POSITION_XAXIS}}",
+      "smartphoneY": "{{HOTSPOT_POSITION_YAXIS}}"
+    },
+    "contentImage": {
+      "addImage": "{{HOTSPOT_ITEM_IMAGE}}",
+      "path": "{{HOTSPOT_ITEM_IMAGE_PATH}}",
+      "description": "{{HOTSPOT_ITEM_IMAGE_DESCRIPTION}}",
+      "altText": "{{HOTSPOT_ITEM_IMAGE_ALT_TEXT}}"
+    },
+    "icons": {
+      "hoverIcon": "{{HOTSPOT_ITEM_HOVER_ICON}}",
+      "normalIcon": "{{HOTSPOT_ITEM_NORMAL_ICON}}",
+      "completeIcon": "{{HOTSPOT_ITEM_COMPLETE_ICON}}"
+    }
+  },
+  "hotspot_panel": {
+    "title": "",
+    "description": "",
+    "position": {
+      "x": 1,
+      "y": 1,
+      "smartphoneX": 1,
+      "smartphoneY": 1
+    },
+    "contentImage": {
+      "path": "",
+      "description": "",
+      "altText": ""
+    },
+    "icons": {
+      "hoverIcon": "",
+      "normalIcon": "",
+      "clickedIcon": "",
+      "closeHoverIcon": "",
+      "completeIcon": ""
+    }
+  },
+  "consult": {
+    "description": "{{CONSULT_DESCRIPTION}}",
+    "addImage": "{{CONSULT_ADD_IMAGE_TOGGLE}}",
+    "image": {
+      "path": "{{CONSULT_ADD_IMAGE_PATH}}",
+      "altText": "{{CONSULT_ADD_IMAGE_ALT_TEXT}}",
+      "description": "{{CONSULT_ADD_IMAGE_DESCRIPTION}}"
+    },
+    "panels": "{{CONSULT_PANELS}}",
+    "question": {
+      "title": "{{CONSULT_QUESTION_TITLE}}",
+      "question": "{{CONSULT_QUESTION}}",
+      "type": "{{CONSULT_QUESTION_TYPE}}",
+      "options": "{{CONSULT_QUESTION_OPTIONS}}"
+    },
+    "retrySettings": "{{CONSULT_RETRY_SETTINGS}}",
+    "retry": {
+      "title": "{{FEEDBACK_RETRY_TITLE}}",
+      "summary": "{{FEEDBACK_RETRY_SUMMARY}}"
+    },
+    "feedback": {
+      "type": "{{FEEDBACK_TYPE}}",
+      "singleSummary": "{{SAQ_FEEDBACK_SUMMARY}}",
+      "correctTitle": "{{FEEDBACK_CORRECT_TITLE}}",
+      "correctSummary": "{{FEEDBACK_CORRECT_SUMMARY}}",
+      "incorrectTitle": "{{FEEDBACK_INCORRECT_TITLE}}",
+      "incorrectSummary": "{{FEEDBACK_INCORRECT_SUMMARY}}"
+    }
+  },
+  "consultPanel": {
+    "type": "false",
+    "title": "{{CONSULT_PANEL_TITLE}}",
+    "description": "{{CONSULT_PANEL_DESCRIPTION}}",
+    "image": {
+      "path": "{{CONSULT_PANEL_IMAGE}}",
+      "description": "{{CONSULT_PANEL_IMAGE_DESCRIPTION}}",
+      "altText": "{{CONSULT_PANEL_IMAGE_ALT_TEXT}}"
+    }
+  },
+  "consultQuestionOption": {
+    "type": "{{CONSULT_QUESTION_TYPE}}",
+    "option": "{{CONSULT_QUESTION_OPTION}}",
+    "image": {
+      "path": "undefined",
+      "description": "",
+      "altText": ""
+    }
+  },
+  "coreImage": {
+    "layout": "text-only",
+    "description": "{{CORE_IMAGE_DESCRIPTION}}",
+    "image": {
+      "path": "{{CORE_IMAGE_PATH}}",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "{{CORE_IMAGE_PATH_MOBILE}}",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "saqVideo": {
+    "description": "{{SAQ_VIDEO_DESCRIPTION}}",
+    "layout": "textSAQ",
+    "layoutView": "dir-ltr",
+    "video": {
+      "path": "{{VIDEO_PATH}}",
+      "title": "{{SAQ_VIDEO_TITLE}}",
+      "text": "{{SAQ_VIDEO_TEXT}}"
+    },
+    "question": {
+      "title": "{{SAQ_QUESTION_TITLE}}",
+      "description": "{{SAQ_QUESTION_DESCRIPTION}}",
+      "type": "{{SAQ_QUESTION_TYPE}}",
+      "options": "{{SAQ_VIDEO_OPTIONS}}"
+    },
+    "retrySettings": "{{SAQVIDEO_RETRY_SETTINGS}}",
+    "feedback": {
+      "type": "{{FEEDBACK_TYPE}}",
+      "singleSummary": "{{SAQ_FEEDBACK_SUMMARY}}",
+      "correctTitle": "{{FEEDBACK_CORRECT_TITLE}}",
+      "correctSummary": "{{FEEDBACK_CORRECT_SUMMARY}}",
+      "incorrectTitle": "{{FEEDBACK_INCORRECT_TITLE}}",
+      "incorrectSummary": "{{FEEDBACK_INCORRECT_SUMMARY}}",
+      "retryTitle": "{{FEEDBACK_RETRY_TITLE}}",
+      "retrySummary": "{{FEEDBACK_RETRY_SUMMARY}}",
+      "partialTitle": "{{PARTIAL_FEEDBACK_TITLE}}",
+      "partialSummary": "{{PARTIAL_FEEDBACK_SUMMARY}}"
+    },
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "saqVideoOption": {
+    "type": "{{SAQ_QUESTION_CHOICE_TYPE}}",
+    "option": "{{SAQ_QUESTION_OPTION}}",
+    "image": {
+      "path": "undefined",
+      "description": "",
+      "altText": ""
+    }
+  },
+  "popup": {
+    "layout": "dir-ltr",
+    "description": "{{POPUP_DESCRIPTION}}",
+    "type": "random",
+    "enableQuotation": "{{POPUP_ENABLE_QUOTATION}}",
+    "labelInThumbnail": "{{POPUP_LABEL_IN_THUMBNAIL}}",
+    "items": "{{POPUP_ITEMS}}"
+  },
+  "popupItem": {
+    "type": "false",
+    "layout": "{{POPUP_ITEM_LAYOUT}}",
+    "description": "{{POPUP_ITEM_DESCRIPTION}}",
+    "title": "{{POPUP_ITEM_TITLE}}",
+    "image": {
+      "path": "{{POPUP_ITEM_DESK_IMAGE}}",
+      "mobPath": "{{POPUP_ITEM_MOB_IMAGE}}",
+      "description": "{{POPUP_ITEM_IMAGE_DESCRIPTION}}",
+      "altText": "{{POPUP_ITEM_ALT_TEXT}}"
+    }
+  },
+  "slideShow": {
+    "description": "{{SLIDESHOW_DESCRIPTION}}",
+    "screens": "{{SLIDE_SCREENS}}"
+  },
+  "slideScreen": {
+    "number": "{{SLIDE_NUMBER}}",
+    "name": "Slide {{SLIDE_NUMBER}}",
+    "format": "{{SLIDE_FORMAT}}",
+    "title": "{{SLIDE_TITLE}}",
+    "description": "{{SLIDE_DESCRIPTION}}",
+    "chatAppearance": "{{SLIDE_CHAT_APPEARANCE}}",
+    "delayNumber": "{{SLIDE_DELAY_NUMBER}}",
+    "chatLayout": "{{SLIDE_CHAT_LAYOUT}}",
+    "imageLayout": "{{SLIDE_IMAGE_LAYOUT}}",
+    "images": {
+      "background": {
+        "path": "{{SLIDE_BG_IMAGE_PATH}}",
+        "mobPath": "{{SLIDE_BG_MOBILE_PATH}}",
+        "layout": "left"
+      },
+      "foreground": {
+        "path": "{{SLIDE_FG_IMAGE_PATH}}",
+        "mobPath": "{{SLIDE_FG_MOBILE_PATH}}",
+        "layout": "{{FOREGROUND_IMAGE_LAYOUT}}",
+        "altText": "{{FOREGROUND_ALT_TEXT}}",
+        "description": "{{FOREGROUND_IMAGE_DESCRIPTION}}"
+      }
+    },
+    "audio": {
+      "soundOptions": "NO_SOUND",
+      "transcript": "{{SLIDE_AUDIO_TRANSCRIPT}}"
+    },
+    "statements": "{{SLIDE_STATMENTS}}"
+  },
+  "slideStatement": {
+    "index": "{{SLIDE_STATMENT_INDEX}}",
+    "messageId": "messageId{{SLIDE_STATMENT_INDEX}}",
+    "personaId": "{{PERSONA_ID}}",
+    "personaName": "{{PERSONA_NAME}}",
+    "conversation": "{{SLIDE_STATMENT_CONVERSATION}}"
+  },
+  "slides": {
+    "name": "Slide 1",
+    "format": "text",
+    "title": "",
+    "content": "",
+    "chatAppearance": "allAtOnce",
+    "delayTime": 0,
+    "slideLayout": "conversation",
+    "imageLayout": "fullImage",
+    "images": {
+      "background": {
+        "path": "",
+        "mobPath": "",
+        "layout": "left"
+      },
+      "foreground": {
+        "path": "",
+        "mobPath": "",
+        "layout": "left"
+      }
+    },
+    "audio": {
+      "name": "",
+      "path": "",
+      "soundOptions": "NO_SOUND",
+      "transcript": ""
+    },
+    "conversation": {
+      "id": 1,
+      "messageId": "messageId1",
+      "key": "",
+      "personaName": "",
+      "html": ""
+    }
+  },
+  "aiScenario": {
+    "layout": "text-only",
+    "content": "",
+    "content2": "",
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "labelInThumbnail": {
+    "enabled": false
+  },
+  "podcast": {
+    "description": "{{PODCAST_DESCRIPTION}}",
+    "autoPlay": "on",
+    "showCC": false,
+    "showAltText": true,
+    "pageNav": false,
+    "image": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    },
+    "mobileImage": {
+      "path": "undefined",
+      "altText": "",
+      "graphicDescription": ""
+    }
+  },
+  "timeline": {
+    "layout": "dir-ltr",
+    "description": "{{TIMELINE_DESCRIPTION}}",
+    "type": "random",
+    "labelInThumbnail": false,
+    "items": "{{TIMELINE_ITEMS}}"
+  },
+  "timelineItem": {
+    "type": "false",
+    "description": "{{ITEM_TIMELINE_DESCRIPTION}}",
+    "title": "{{ITEM_TIMELINE_TITLE}}",
+    "audioTranscript": "{{ITEM_AUDIO_TRANSCRIPT}}",
+    "interactionLabel": "{{ITEM_TIMELINE_INTERACTION_LABEL}}",
+    "interactionLayout": "{{ITEM_TIMELINE_INTERACTION_LAYOUT}}",
+    "interactionLayoutType": "{{ITEM_TIMELINE_INTERACTION_LAYOUT_TYPE}}",
+    "image": {
+      "path": "{{TIMELINE_FOREGROUND_DESKTOP_PATH}}",
+      "mobPath": "{{TIMELINE_FOREGROUND_MOBILE_PATH}}",
+      "description": "{{TIMELINE_IMAGE_DESCRIPTION}}",
+      "altText": "{{TIMELINE_ALT_TEXT}}"
+    },
+    "customizeIcon": "{{TIMELINE_CUSTOMIZE_ICON}}",
+    "icons": {
+      "hoverPath": "{{TIMELINE_HOVER_IMG_PATH}}",
+      "normalPath": "{{TIMELINE_NORMAL_IMG_PATH}}",
+      "activePath": "{{TIMELINE_ACTIVE_IMG_PATH}}",
+      "completePath": "{{TIMELINE_COMPLETE_IMG_PATH}}"
+    }
+  },
+  "videoQNASingleFeedback": {
+    "mediaSource": "",
+    "path": "",
+    "subtitle": {
+      "name": "",
+      "path": ""
+    },
+    "title": "",
+    "text": ""
+  },
+  "videoQNACorrectFeedback": {
+    "mediaSource": "",
+    "path": "",
+    "subtitle": {
+      "name": "",
+      "path": ""
+    },
+    "title": "",
+    "text": ""
+  },
+  "videoQNAInCorrectFeedback": {
+    "mediaSource": "",
+    "path": "",
+    "subtitle": {
+      "name": "",
+      "path": ""
+    },
+    "title": "",
+    "text": ""
+  },
+  "videoQNAPartialFeedback": {
+    "mediaSource": "",
+    "path": "",
+    "subtitle": {
+      "name": "",
+      "path": ""
+    },
+    "title": "",
+    "text": ""
+  },
+  "partialFeedBackTitle": {
+    "title": ""
+  },
+  "partialFeedbackContent": {
+    "content": ""
+  },
+  "retryFeedbackConsult": {
+    "title": "",
+    "content": ""
+  },
+  "adpFailMessageText": {
+    "version": "1.0",
+    "text": "{{adpFailMessageText}}"
+  },
+  "adpPassMessageText": {
+    "version": "1.0",
+    "text": "{{adpPassMessageText}}"
+  },
+  "adpQuestionText": {
+    "version": "1.0",
+    "text": "{{adpQuestionText}}"
+  },
+  "adpQuestionAnswer": {
+    "version": "1.0",
+    "index": "{{adpQuestionAnswerIndex}}",
+    "answer": "{{adpQuestionAnswer}}"
+  }
+}
