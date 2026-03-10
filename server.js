@@ -885,13 +885,14 @@ app.post('/api/action/accept', async (req, res) => {
   try {
     const { data, context } = req.body;
     
-    // Use CMS_AUTH_TOKEN from environment (.env)
-    const token = process.env.CMS_AUTH_TOKEN || null;
+    // Extract token from the Authorization header sent by the frontend
+    const authHeader = req.headers['authorization'] || req.headers['Authorization'] || '';
+    const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader || null;
 
     if (!token) {
-      return res.status(500).json({ 
-        error: 'Server Misconfiguration',
-        message: 'CMS_AUTH_TOKEN is not set in the backend .env file.' 
+      return res.status(401).json({ 
+        error: 'Unauthorized',
+        message: 'No Authorization token provided. Please log in again.' 
       });
     }
 
@@ -1609,6 +1610,52 @@ app.post('/api/course-outline/update-status', async (req, res) => {
       message: error.message || 'Failed to update course outline status',
       details: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
+  }
+});
+
+// ==================== MESSAGE FEEDBACK ENDPOINTS ====================
+
+// POST /api/message/feedback — submit or update like/dislike
+app.post('/api/message/feedback', async (req, res) => {
+  try {
+    const { messageId, sessionId, feedback } = req.body;
+
+    if (!messageId || !sessionId) {
+      return res.status(400).json({ error: 'messageId and sessionId are required' });
+    }
+
+    if (!['like', 'dislike'].includes(feedback)) {
+      return res.status(400).json({ error: 'feedback must be "like" or "dislike"' });
+    }
+
+    console.log(`[Feedback] ${feedback} on message ${messageId} in session ${sessionId}`);
+
+    await dbService.updateMessageFeedback(sessionId, messageId, feedback);
+
+    return res.json({ success: true, messageId, feedback });
+  } catch (error) {
+    console.error('[Feedback] Error saving feedback:', error);
+    return res.status(500).json({ error: 'Failed to save feedback' });
+  }
+});
+
+// DELETE /api/message/feedback — remove feedback (toggle off)
+app.delete('/api/message/feedback', async (req, res) => {
+  try {
+    const { messageId, sessionId } = req.body;
+
+    if (!messageId || !sessionId) {
+      return res.status(400).json({ error: 'messageId and sessionId are required' });
+    }
+
+    console.log(`[Feedback] Removing feedback for message ${messageId} in session ${sessionId}`);
+
+    await dbService.updateMessageFeedback(sessionId, messageId, null);
+
+    return res.json({ success: true, messageId, feedback: null });
+  } catch (error) {
+    console.error('[Feedback] Error removing feedback:', error);
+    return res.status(500).json({ error: 'Failed to remove feedback' });
   }
 });
 

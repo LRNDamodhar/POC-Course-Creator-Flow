@@ -209,6 +209,32 @@ class DatabaseService {
   }
 
   /**
+   * Update user feedback (like/dislike) on a message.
+   * @param {string} sessionId
+   * @param {string} messageId
+   * @param {'like'|'dislike'|null} feedback
+   */
+  async updateMessageFeedback(sessionId, messageId, feedback) {
+    if (!isDBConnected()) {
+      console.warn('[DB Service] DB not connected, skipping feedback update');
+      return null;
+    }
+    try {
+      const session = await Session.findBySessionId(sessionId);
+      if (!session) {
+        console.warn(`[DB Service] Session not found for feedback: ${sessionId}`);
+        return null;
+      }
+      await session.updateMessage(messageId, { feedback });
+      console.log(`[DB Service] ✓ Feedback "${feedback}" saved for message: ${messageId}`);
+      return session.toObject();
+    } catch (error) {
+      console.error('[DB Service] Error updating feedback:', error);
+      return null;
+    }
+  }
+
+  /**
    * Update message accept/reject status
    * @param {string} sessionId - Session identifier
    * @param {string} messageId - Message identifier
